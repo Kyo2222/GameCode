@@ -104,3 +104,31 @@ public void RegisterInventory(InventoryModel model) { Inventory = model; }
 ```
  
 これにより `HealerController` や `EnemyHudView` などのシステムが独立して動作でき、`GameContext` から必要な Model を取得してイベントを購読するだけで、お互いが完全に疎結合になります。
+
+---
+ 
+# Unity テスト自動化ツール
+ 
+PythonでUnityのTest Runnerを自動実行し、結果をレポート出力するデモです。
+ 
+## ファイル構成
+ 
+| ファイル | 説明 |
+|---|---|
+| `run_tests.py` | テストを自動実行する |
+| `parse_results.py` | 結果を解析してレポートを出力する |
+| `FirstTest.cs` | EditModeテストのサンプル |
+ 
+## 使い方
+ 
+> ※ 実行前にUnity Editorを閉じてください。
+ 
+```bash
+python run_tests.py
+python parse_results.py
+```
+ 
+## 動作環境
+ 
+- Unity 2022.3.x
+- Python 3.x
