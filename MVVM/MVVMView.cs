@@ -32,6 +32,7 @@ public class MVVMView : MonoBehaviour
         if (_viewModel != null)
         {
             _viewModel.OnDisplayTextChanged -= UpdateDisplay;
+            _viewModel.Dispose();
         }
     }
 
@@ -47,6 +48,16 @@ public class MVVMView : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _viewModel.Decrement();
+        }
+
+        // H 鍵增加血量，K 鍵減少血量
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            _viewModel.AddHp(10);
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            _viewModel.SubHp(10);
         }
     }
 }

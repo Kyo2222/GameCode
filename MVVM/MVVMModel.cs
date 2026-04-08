@@ -1,9 +1,14 @@
 using System;
 
-// データモデル
+// データモデル（Model）
+using UniRx;
+
 public class MVVMModel
 {
     private int _data;
+
+    // UniRx の HP（血量）
+    public ReactiveProperty<int> Hp { get; } = new ReactiveProperty<int>(100);
 
     public int Data
     {
@@ -18,6 +23,6 @@ public class MVVMModel
         }
     }
 
-    // データ変更通知
+    // データ変更通知イベント
     public event Action<int> OnDataChanged;
 }
