@@ -106,7 +106,29 @@ public void RegisterInventory(InventoryModel model) { Inventory = model; }
 これにより `HealerController` や `EnemyHudView` などのシステムが独立して動作でき、`GameContext` から必要な Model を取得してイベントを購読するだけで、お互いが完全に疎結合になります。
 
 ---
- 
+
+# MVVMアーキテクチャ
+
+Unityでの簡単なMVVMサンプルです。
+
+### 使い方
+
+1. 空のGameObjectを作成します。
+2. `MVVMDemo.cs` をアタッチします。
+3. シーンを再生します。
+4. 上下キーで値を変更します。
+
+### 構成
+
+- `MVVMModel.cs` : データモデル
+- `ViewModel.cs` : 表示ロジックと状態管理
+- `MVVMView.cs` : ViewModelにバインドするView
+- `MVVMDemo.cs` : 初期化用デモ
+
+純粋なMVVM実装です。
+
+---
+
 # Unity テスト自動化ツール
  
 PythonでUnityのTest Runnerを自動実行し、結果をレポート出力するデモです。
